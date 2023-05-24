@@ -372,7 +372,6 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix' => 'seller_wallet_transactions'], function () {
         Route::get('/', [\App\Http\Controllers\API\SellerWalletTransactionsApiController::class, 'index']);
         Route::post('save', [\App\Http\Controllers\API\SellerWalletTransactionsApiController::class, 'save'])->name('seller_wallet_transactions.save');
-
     });
 
     Route::group(['prefix' => 'shipping_methods'], function () {
@@ -447,7 +446,6 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/', [\App\Http\Controllers\API\MailSettingsApiController::class, 'index']);
             Route::post('save', [\App\Http\Controllers\API\MailSettingsApiController::class, 'save'])->name('seller.mail_settings.save');
         });
-
     });
 
 
@@ -475,5 +473,4 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('save', [\App\Http\Controllers\API\MailSettingsApiController::class, 'save'])->name('delivery_boy.mail_settings.save');
         });
     });
-
 });
