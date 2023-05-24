@@ -1,0 +1,5 @@
+{
+    "version": "1.6.0",
+    "archive": "RELEASE-1.6.zip",
+    "description": "[Added] Release a website.<br>[Added] The ability for iOS app updates (in-app update). <br>[Added] PayPal payment method. <br>[Added] Menu search feature in the admin panel to search through the menu. <br>[Fixed] Various bugs and made general improvements to the app."
+}
