@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +19,14 @@ use Illuminate\Support\Facades\Cache;
 Route::get('/', function () {
     return view('welcome');
 });
-    //  ->middleware('lang');
+//  ->middleware('lang');
 
 Route::get('/clear', function () {
-    \Artisan::call('cache:clear');
-    \Artisan::call('route:cache');
-    \Artisan::call('config:cache');
-    \Artisan::call('view:clear');
-    \Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:cache');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('config:clear');
     echo 'clear';
 });
 
@@ -43,7 +45,7 @@ Route::get('test', [App\Http\Controllers\Controller::class, 'test']);
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 Route::get('deploy', [\App\Http\Controllers\Controller::class, 'deploy']);
 
-Route::view('mail_theame','mail');
+Route::view('mail_theame', 'mail');
 
 Route::get('customer-privacy-policy', [\App\Http\Controllers\API\PrivacyPolicyApiController::class, 'printPrivacyPolicy']);
 Route::get('customer-returns-and-exchanges-policy', [\App\Http\Controllers\API\PrivacyPolicyApiController::class, 'printReturnsAndExchangesPolicy']);
@@ -69,7 +71,7 @@ Route::post('webhook/stripe', [\App\Http\Controllers\StripeController::class, 's
 //for localization in vuejs
 Route::post('api/change_language', [\App\Http\Controllers\Controller::class, 'doLanguageChange'])->name('change_language');
 
-Route::get('/js/lang', function() {
+Route::get('/js/lang', function () {
     /*$files   = glob(resource_path('lang/' . $lang . '/*.php'));
     $strings = [];
     foreach ($files as $file) {
@@ -90,7 +92,7 @@ Route::get('/js/lang', function() {
 
     //$file = file_get_contents(resource_path('lang/' . $lang . '.json'));
     header('Content-Type: text/javascript');
-    echo('window.i18n = ' . $file);
+    echo ('window.i18n = ' . $file);
     exit();
 })->name('assets.lang')->withoutMiddleware('auth:sanctum');
 

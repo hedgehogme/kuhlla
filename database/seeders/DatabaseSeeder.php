@@ -21,9 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionCategoriesSeeder::class);
         $this->call(PermissionSeeder::class);
 
-        /*$this->call(OrderStatusList::class);
-        $this->call(CountrySeeder::class);
-        $this->call(SettingSeeder::class);*/
-        //$this->call(Demo::class);
+        // $this->call(OrderStatusList::class);
+        // $this->call(CountrySeeder::class);
+        // $this->call(SettingSeeder::class);
+        // $this->call(Demo::class);
     }
 }
